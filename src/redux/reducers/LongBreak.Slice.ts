@@ -4,7 +4,7 @@ import { Timer } from "../../utils/interfaces";
 import { getLocalVal } from "../../utils/localStorage";
 
 const initialState: Timer = {
-  min: getLocalVal("long break") || 15,
+  min: getLocalVal("long break") as number || 15,
   sec: 0,
 };
 
@@ -26,7 +26,7 @@ const longBreakSlice = createSlice({
     },
     reset: () => {
       if (getLocalVal("long break"))
-        return { min: getLocalVal("long break"), sec: 0 };
+        return { min: getLocalVal("long break") as number, sec: 0 };
       else return initialState;
     },
   },

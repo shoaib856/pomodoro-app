@@ -26,6 +26,7 @@ const Setting = () => {
       >
         <img src={settingIcon} alt="setting icon" />
       </button>
+
       <Modal ref={modalRef}>
         <ModalHeader {...{ closeModal }} />
         <Divider />

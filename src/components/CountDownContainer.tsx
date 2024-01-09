@@ -1,9 +1,9 @@
-const TimerContainer = ({ children }: { children: React.ReactNode }) => {
+const CountDownContainer = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="p-[22px] rounded-full [background:_linear-gradient(315deg,_#2E325A_0%,_#0E112A_100%)] [box-shadow:_50px_50px_100px_0px_#121530,_-50px_-50px_100px_0px_#272C5A]">
-      {children}
+      <div className="bg-mirage p-[13.5px] rounded-full">{children}</div>
     </div>
   );
 };
 
-export default TimerContainer;
+export default CountDownContainer;

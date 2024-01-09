@@ -3,7 +3,7 @@ import { useGetSettingValues } from "../Hooks/useGetSettingValues";
 import { useCallback, useMemo } from "react";
 import { get } from "../utils/modesProps";
 
-const Progress = ({
+const CircularProgress = ({
   children,
   selected,
 }: {
@@ -34,9 +34,9 @@ const Progress = ({
         "--thickness": "10px",
       }}
     >
-      {children}
+      <div className="flex flex-col gap-10 z-10">{children}</div>
     </div>
   );
 };
 
-export default Progress;
+export default CircularProgress;

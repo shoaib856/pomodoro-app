@@ -1,7 +1,7 @@
 import { useHandleTimer } from "../Hooks/useHandleTimer";
-import {  countDown,  get,  reset } from "../utils/modesProps";
+import { countDown, get, reset } from "../utils/modesProps";
 
-const TimerButton = ({ selected }: { selected: number }) => {
+const ControllerButton = ({ selected }: { selected: number }) => {
   const { handlePause, pause, handleStart, start, restart } = useHandleTimer(
     get[selected],
     countDown[selected],
@@ -19,7 +19,7 @@ const TimerButton = ({ selected }: { selected: number }) => {
   );
 };
 
-export default TimerButton;
+export default ControllerButton;
 
 const Button = ({
   onClick,

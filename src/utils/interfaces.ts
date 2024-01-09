@@ -7,6 +7,7 @@ export interface Setting {
   pomodoro: number;
   shortBreak: number;
   longBreak: number;
+  font: string;
 }
 
 export interface Controller {

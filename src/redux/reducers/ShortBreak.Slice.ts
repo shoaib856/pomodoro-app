@@ -4,7 +4,7 @@ import { Timer } from "../../utils/interfaces";
 import { getLocalVal } from "../../utils/localStorage";
 
 const initialState: Timer = {
-  min: getLocalVal("short break") || 5,
+  min: (getLocalVal("short break") as number) || 5,
   sec: 0,
 };
 
@@ -25,10 +25,9 @@ const shortBreakSlice = createSlice({
       return { min: action.payload, sec: 0 };
     },
     reset: () => {
-        if (getLocalVal("short break"))
-          return { min: getLocalVal("short break"), sec: 0 };
-        else return initialState;
-      
+      if (getLocalVal("short break"))
+        return { min: getLocalVal("short break") as number, sec: 0 };
+      else return initialState;
     },
   },
 });

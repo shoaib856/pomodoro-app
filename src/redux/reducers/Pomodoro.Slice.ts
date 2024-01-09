@@ -4,7 +4,7 @@ import { Timer } from "../../utils/interfaces";
 import { getLocalVal } from "../../utils/localStorage";
 
 const initialState: Timer = {
-  min: getLocalVal("pomodoro") || 25,
+  min: getLocalVal("pomodoro") as number || 25,
   sec: 0,
 };
 
@@ -26,7 +26,7 @@ const pomodoroSlice = createSlice({
     },
     reset: () => {
       if (getLocalVal("pomodoro"))
-        return { min: getLocalVal("pomodoro"), sec: 0 };
+        return { min: getLocalVal("pomodoro") as number, sec: 0 };
       else return initialState;
     },
   },

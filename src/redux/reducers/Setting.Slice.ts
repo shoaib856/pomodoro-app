@@ -3,9 +3,10 @@ import { Setting } from "../../utils/interfaces";
 import { getLocalVal, setLocalVal } from "../../utils/localStorage";
 
 const initialState: Setting = {
-  pomodoro: getLocalVal("pomodoro") || 25,
-  shortBreak: getLocalVal("short break") || 5,
-  longBreak: getLocalVal("long break") || 10,
+  pomodoro: (getLocalVal("pomodoro") as number) || 25,
+  shortBreak: (getLocalVal("short break") as number) || 5,
+  longBreak: (getLocalVal("long break") as number) || 10,
+  font: (getLocalVal("font") as string) || "font-kumbh-sans",
 };
 
 const settingSlice = createSlice({
@@ -39,13 +40,18 @@ const settingSlice = createSlice({
           return state;
       }
     },
+    updateFont: (state, action) => {
+      return { ...state, font: action.payload };
+    },
     apply: (state) => {
       setLocalVal("pomodoro", state.pomodoro);
       setLocalVal("short break", state.shortBreak);
       setLocalVal("long break", state.longBreak);
+      setLocalVal("font", state.font);
     },
+    resetSetting: () => initialState,
   },
 });
 
-export const { apply, update } = settingSlice.actions;
+export const { apply, update, updateFont ,resetSetting} = settingSlice.actions;
 export default settingSlice.reducer;

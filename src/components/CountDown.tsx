@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { get } from "../utils/modesProps";
 
-const CounterDown = ({ selected }: { selected: number }) => {
+const CountDown = ({ selected }: { selected: number }) => {
   const { min, sec } = get[selected]();
   return (
     <span className="countdown text-h1 text-hawkesBlue flex items-center gap-2">
@@ -22,4 +22,4 @@ const CounterDown = ({ selected }: { selected: number }) => {
   );
 };
 
-export default CounterDown;
+export default CountDown;

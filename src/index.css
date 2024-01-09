@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    @apply font-kumbh-sans;
-  }
-  #root {
-    @apply bg-ebonyClay min-h-screen flex items-center justify-center;
-  }
+html,
+body {
+  @apply bg-ebonyClay;
+}
+#root {
+  @apply flex items-center justify-center min-h-screen;
 }
 
 ::-webkit-inner-spin-button,
