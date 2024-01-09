@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-kumbh-sans;
+  }
+  #root {
+    @apply bg-ebonyClay min-h-screen flex items-center justify-center;
+  }
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  display: none;
+}
+
+@font-face {
+  font-family: kumbh-sans, sans-serif;
+  src: url(./assets/fonts/KumbhSans-VariableFont_YOPQ\wght.ttf);
+}
+@font-face {
+  font-family: roboto-slab, serif;
+  src: url(./assets/fonts/RobotoSlab-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: space-mono, monospace;
+  src: url(./assets/fonts/SpaceMono-Regular.ttf);
+}
